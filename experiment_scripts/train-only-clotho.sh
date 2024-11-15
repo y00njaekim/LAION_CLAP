@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# CUDA 환경 설정
+export CUDA_VISIBLE_DEVICES=0
+
 python -m laion_clap.training.main \
     --save-frequency 5 \
     --save-top-performance 3 \
@@ -10,7 +15,6 @@ python -m laion_clap.training.main \
     --wd=0.0 \
     --epochs=45 \
     --workers=6 \
-    --use-bn-sync \
     --amodel HTSAT-tiny \
     --tmodel roberta \
     --warmup 3200 \
@@ -20,7 +24,6 @@ python -m laion_clap.training.main \
     --top-k-checkpoint-select-metric="mAP@10" \
     --logs 'logs' \
     --seed 3407 \
-    --gather-with-grad \
     --optimizer "adam" \
     --data-filling "repeatpad" \
     --data-truncating "rand_trunc" \

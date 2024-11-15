@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# CUDA 환경 설정
+export CUDA_VISIBLE_DEVICES=0
+
 # run from CLAP directory
 python -m evaluate.eval_zeroshot_classification \
   --dataset-type="webdataset" \
@@ -7,7 +12,7 @@ python -m evaluate.eval_zeroshot_classification \
   --amodel HTSAT-tiny \
   --tmodel roberta \
   --datasetnames "esc50_no_overlap" \
-  --remotedata \
+  --datasetpath <your_dataset_path> \
   --datasetinfos "train" \
   --seed 3407 \
   --logs ./logs \
