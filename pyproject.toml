@@ -1,54 +1,40 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-[project]
-name = "laion_clap"
-version = "1.1.4"
-authors = [
-  { name="Ke Chen", email="knutchen@ucsd.edu" },
-  { name="Yusong Wu" },
-  { name="Tianyu Zhang" },
-  { name="Yuchen Hui" }
-]
-maintainers = [
-  { name="Ke Chen", email="knutchen@ucsd.edu" },
-  { name="Yusong Wu" },
-  { name="Tianyu Zhang" },
-  { name="Yuchen Hui" }
-]
-description = "Contrastive Language-Audio Pretraining Model from LAION"
-license = {file = "LICENSE"}
+[tool.poetry]
+name = "laion-clap"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-requires-python = ">=3.7"
-dependencies = [
-  "numpy==1.23.5",
-  "soundfile",
-  "librosa",
-  "torchlibrosa",
-  "ftfy",
-  "braceexpand",
-  "webdataset",
-  "wget",
-  "wandb",
-  "llvmlite",
-  "scipy",
-  "scikit-learn",
-  "pandas",
-  "h5py",
-  "tqdm",
-  "regex",
-  "transformers",
-  "progressbar"
-]
-classifiers = [
-    'Development Status :: 3 - Alpha',
-    'Intended Audience :: Developers',
-    'Intended Audience :: Science/Research',
-    'License :: OSI Approved :: Apache Software License',
-    'Topic :: Scientific/Engineering :: Artificial Intelligence',
-]
 
+[tool.poetry.dependencies]
+python = "~3.10"
+torch = {version = "1.11.0", source = "pytorch"}
+torchvision = {version = "0.12.0", source = "pytorch"}
+torchaudio = {version = "0.11.0", source = "pytorch"}
+numpy = "1.23.5"
+soundfile = "^0.12.1"
+librosa = "^0.10.2.post1"
+torchlibrosa = "^0.1.0"
+ftfy = "^6.3.1"
+braceexpand = "^0.1.7"
+webdataset = "^0.2.100"
+wget = "^3.2"
+wandb = "^0.18.7"
+llvmlite = "^0.43.0"
+scipy = "^1.14.1"
+scikit-learn = "^1.5.2"
+pandas = "^2.2.3"
+h5py = "^3.12.1"
+tqdm = "^4.67.0"
+regex = "^2024.11.6"
+transformers = "^4.46.2"
+progressbar = "^2.5"
+gdown = "^5.2.0"
 
-[project.urls]
-"Homepage" = "https://github.com/LAION-AI/CLAP"
-"Bug Tracker" = "https://github.com/LAION-AI/CLAP/issues"
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu113"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

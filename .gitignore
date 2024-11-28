@@ -162,3 +162,10 @@ src/dev.py
 ESC.csv
 .gitignore
 UrbanSound8K.csv
+
+audio-dataset/
+*/**/*.ckpt
+*/**/*.wav
+*/**/*.flac
+*/**/*.tar
+*/**/*.json
