@@ -1,6 +1,6 @@
 from transformers import BertTokenizer, BertModel
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertModel.from_pretrained("bert-base-uncased")
+tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-uncased')
+model = BertModel.from_pretrained("bert-base-multilingual-uncased")
 text = "Replace me by any text you'd like."
 
 def bert_embeddings(text):

@@ -41,7 +41,7 @@ try:
 except ImportError:
     torchaudio = None
 
-bert_tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+bert_tokenizer = BertTokenizer.from_pretrained("bert-base-multilingual-uncased")
 roberta_tokenizer = RobertaTokenizer.from_pretrained("roberta-base")
 bart_tokenizer = BartTokenizer.from_pretrained("facebook/bart-base")
 

@@ -493,7 +493,7 @@ class CLAP(nn.Module):
                 nn.Linear(self.joint_embed_shape, self.joint_embed_shape)
             )
         elif text_cfg.model_type == "bert":
-            self.text_branch = BertModel.from_pretrained("bert-base-uncased")
+            self.text_branch = BertModel.from_pretrained("bert-base-multilingual-uncased")
             self.text_transform = MLPLayers(units=[self.joint_embed_shape,
                                                    self.joint_embed_shape,
                                                    self.joint_embed_shape], dropout=0.1)
