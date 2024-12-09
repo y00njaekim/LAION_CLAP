@@ -3,6 +3,7 @@
 # CUDA 환경 설정
 export CUDA_VISIBLE_DEVICES=0
 export PYTHONPATH="/home/laion_clap/LAION_CLAP/src/laion_clap:${PYTHONPATH}"
+export WANDB_API_KEY='402aa2b77bad2c5914a60b6c37a08ce3bc34374a'
 
 
 
@@ -21,8 +22,8 @@ export PYTHONPATH="/home/laion_clap/LAION_CLAP/src/laion_clap:${PYTHONPATH}"
     --amodel HTSAT-tiny \
     --tmodel bert \
     --warmup 3200 \
-    --datasetnames "clotho_kor_tar" \
-    --datasetinfos "train" \
+    --datasetnames "clotho_kor_tar" "audiocaps_kor_tar" \
+    --datasetinfos "train" "train" \
     --top-k-checkpoint-select-dataset="Clotho-test" \
     --top-k-checkpoint-select-metric="mAP@10" \
     --logs '/home/laion_clap/LAION_CLAP/logs' \
@@ -31,4 +32,5 @@ export PYTHONPATH="/home/laion_clap/LAION_CLAP/src/laion_clap:${PYTHONPATH}"
     --data-filling "repeatpad" \
     --data-truncating "rand_trunc" \
     --pretrained-audio '/home/laion_clap/LAION_CLAP/artifacts/HTSAT-fullset-imagenet-tiny-map=0.467.ckpt' \
-    --prefetch-factor 2
+    --prefetch-factor 2 \
+    --report-to wandb

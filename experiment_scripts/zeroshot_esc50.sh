@@ -12,7 +12,7 @@ python -m evaluate.eval_zeroshot_classification \
   --amodel HTSAT-tiny \
   --tmodel roberta \
   --datasetnames "esc50_no_overlap" \
-  --datasetpath <your_dataset_path> \
+  --remotedata \
   --datasetinfos "train" \
   --seed 3407 \
   --logs ./logs \

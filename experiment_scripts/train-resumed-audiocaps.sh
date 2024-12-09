@@ -21,7 +21,7 @@ export PYTHONPATH="/home/laion_clap/LAION_CLAP/src/laion_clap:${PYTHONPATH}"
     --amodel HTSAT-tiny \
     --tmodel bert \
     --warmup 3200 \
-    --datasetnames "clotho_kor_tar" \
+    --datasetnames "audiocaps_kor_tar" \
     --datasetinfos "train" \
     --top-k-checkpoint-select-dataset="Clotho-test" \
     --top-k-checkpoint-select-metric="mAP@10" \
@@ -30,5 +30,5 @@ export PYTHONPATH="/home/laion_clap/LAION_CLAP/src/laion_clap:${PYTHONPATH}"
     --optimizer "adam" \
     --data-filling "repeatpad" \
     --data-truncating "rand_trunc" \
-    --pretrained-audio '/home/laion_clap/LAION_CLAP/artifacts/HTSAT-fullset-imagenet-tiny-map=0.467.ckpt' \
+    --pretrained '/home/laion_clap/LAION_CLAP/logs/2024_11_29-04_32_41-model_HTSAT-tiny-lr_0.0001-b_192-j_4-p_fp32/checkpoints/epoch_45.pt' \
     --prefetch-factor 2
