@@ -137,7 +137,7 @@ def main():
     torch.cuda.manual_seed(args.seed)
     torch.cuda.manual_seed_all(args.seed)
     np.random.seed(args.seed)
-    if args.tmodel == "bert" or args.tmodel == "roberta" or args.tmodel == "bart":
+    if (args.tmodel == "bert" or args.tmodel == "roberta" or args.tmodel == "bart") and not os.path.exists(args.pretrained):
         assert (
             args.pretrained == "" or args.pretrained is None
         ), "bert/roberta/bart text encoder does not support pretrained models."
@@ -482,7 +482,7 @@ def main():
             args.val_sz = data["val"].dataloader.num_samples
         # you will have to configure this for your project!
         wandb.init(
-            entity="clap",
+            entity="keymy00njae",
             project="clap",
             notes=args.wandb_notes,
             name=args.wandb_notes,
