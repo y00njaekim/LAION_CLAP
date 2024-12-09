@@ -29,6 +29,7 @@ regex = "^2024.11.6"
 transformers = "^4.46.2"
 progressbar = "^2.5"
 gdown = "^5.2.0"
+p-tqdm = "^1.4.2"
 
 [[tool.poetry.source]]
 name = "pytorch"
